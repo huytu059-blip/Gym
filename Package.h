@@ -53,3 +53,44 @@ public:
 
 
 #endif //GYM_REGISTRATION_H
+
+// Phần của Dũng
+//
+// Created by Administrator on 4/5/2026.
+//
+
+#ifndef GYM_PACKAGE_H
+#define GYM_PACKAGE_H
+#include <string>
+
+
+class Package {
+private:
+    int packageId;
+    std::string name;
+    int duration;
+    double price;
+public:
+    Package(int id,std::string n, int d, double p) {
+        this->packageId = id;
+        this->name = n;
+        this->duration = d;
+        this->price = p;
+    }
+    int getPackageID() const {
+        return packageId;
+    }
+    std::string getName() const {
+        return name;
+    }
+    int getDuration() const {
+        return duration;
+    }
+    double getPrice() const {
+        return price;
+    }
+};
+
+
+
+#endif //GYM_PACKAGE_H
