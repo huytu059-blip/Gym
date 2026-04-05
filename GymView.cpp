@@ -15,8 +15,10 @@ void drawBox(std::string title) {
     std::cout << "===========================================\n";
 }
 void chosse() {
+    int choice;
     std::cout << "===========================================\n";
     std::cout << "👉 Chọn: ";
+    std::cin>> choice;
 }
 // 1. Quản lý hội viên (Member)
 // 2. Quản lý gói tập (Membership Package)
