@@ -4,6 +4,7 @@
 
 #ifndef GYM_MEMBER_H
 #define GYM_MEMBER_H
+#include <string>
 
 
 class Member: public Person {
@@ -12,11 +13,26 @@ private :
     string name;
     string dateofbirth;
     string gender;
-    string numberPhone;
+    std::string numberPhone;
     public :
     void getMember();
     void isActive();
     searchInfoMember();
+public:
+    Member(int ID, std::string Name)
+    : memberId(ID), name(Name) {}
+
+    int getMemberId() {
+        return memberId;
+    }
+
+    std::string getName() {
+        return name;
+    }
+
+    std::string getNumberPhone() {
+        return numberPhone;
+    }
 };
 
 
