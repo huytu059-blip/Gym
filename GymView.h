@@ -7,6 +7,16 @@
 
 
 class GymView {
+    public:
+    void mainScreen() const;
+    void generalScreen() const ;
+    void memberScreen() const;
+    void packageScreen() const;
+    void checkScreen()  const;
+    void trainerScreen() const;
+    void paymentsScreen() const;
+    void reportScreen() const ;
+    void settingsScreen() const ;
 };
 
 
