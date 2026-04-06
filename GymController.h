@@ -11,7 +11,7 @@
 #include "../Model/Trainer.h"
 #include <string>
 #include <iostream>
-#include <vector>
+
 #include "Controller/Exceptions.h"
 class GymController {
     std::unordered_map<int, Member> Members;
