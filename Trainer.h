@@ -18,11 +18,11 @@ class Trainer:public Person {
         this->id = trainer_id;
         this->name = trainer_name;
         this->trainer_expertise = trainer_expertise;
-        this->PhoneNumber = trainer_phonenumber;
+        this->phoneNumber = trainer_phonenumber;
 
     }
 
-    std::string get_trainer_expertise() {return trainer_expertise;}
+   virtual std::string get_trainer_expertise() {return trainer_expertise;}
 
     void set_trainer_expertise(std::string trainer_expertise) {
         trainer_expertise = trainer_expertise;
