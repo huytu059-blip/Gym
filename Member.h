@@ -1,44 +1,61 @@
-//
-// Created by FPT SHOP on 4/3/2026.
-//
-
 #ifndef GYM_MEMBER_H
 #define GYM_MEMBER_H
+
 #include <string>
+#include "Person.h"
 
-
-class PersonMember:public Person {
+class Member : public Person {
+private:
     std::string dateOfBirth;
     std::string gender;
 
-    public:
-    PersonMember() {
-        dateOfBirth = " ";
-        gender = " ";
-    }
-    PersonMember(int member_ID, std::string member_name, std::string member_phonenumber,std::string member_date, std::string member_gender) {
-        this->id = member_ID;
-        this->name = member_name;
-        this->phoneNumber = member_phonenumber;
-        this->dateOfBirth = member_date;
-        this->gender = member_gender;
-
+public:
+    // constructor mặc định
+    Member() {
+        dateOfBirth = "";
+        gender = "";
     }
 
+    // constructor đầy đủ
+    Member(int member_ID,
+                 std::string member_name,
+                 std::string member_phonenumber,
+                 std::string member_date,
+                 std::string member_gender)
+        : Person(member_ID, member_name, member_phonenumber) // 🔥 gọi constructor cha
+    {
+        dateOfBirth = member_date;
+        gender = member_gender;
+    }
 
-   virtual std::string getDateOfBirth() { return dateOfBirth; }
-   virtual std::string getGender() { return gender; }
+    // override các hàm pure virtual
+    int getId() override {
+        return id;
+    }
 
+    std::string getName() override {
+        return name;
+    }
 
+    std::string getNumberPhone() override {
+        return numberPhone;
+    }
+
+    std::string getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    std::string getGender() {
+        return gender;
+    }
 
     void setDateOfBirth(std::string date) {
         dateOfBirth = date;
     }
-    void setGender(std::string gender) {
-        gender = gender;
-    }
 
+    void setGender(std::string gender) {
+        this->gender = gender; // ✅ fix lỗi
+    }
 };
 
-
-#endif //GYM_MEMBER_H
+#endif
