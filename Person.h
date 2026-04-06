@@ -6,20 +6,33 @@
 #define GYM_PERSON_H
 
 class Person {
-    private:
+private:
     int id;
     std::string name;
-    std::string numberPhone;
-    public:
-    Person(int id, std::string name, std::string numberPhone) {
+    std::string PhoneNumber;
+public:
+
+    Person() {
+        int id = 0;
+        std::string name = "";
+        std::string PhoneNumber = "";
+
+    }
+    Person(int id, std::string name, std::string PhoneNumber) {
         this->id = id;
         this->name = name;
-        this->numberPhone = numberPhone;
+        this->PhoneNumber = PhoneNumber;
     };
-    virtual void getId() =0;
-    virtual void getName() =0;
-    virtual void getNumberPhone()=0;
+
+    int getId() { return id; }
+    std::string getName() { return name; }
+    std::string getPhoneNumber() { return PhoneNumber; }
+
+    void setId(int id) { this->id = id; }
+    void setName(std::string name) { this->name = name; }
+    void setPhoneNumber(std::string PhoneNumber) { this->PhoneNumber = PhoneNumber; }
 
 };
+
 
 #endif //GYM_PERSON_H
