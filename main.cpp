@@ -1,7 +1,7 @@
 // #include <iostream>
 // #include "Controller/GymController.h"
 // #include <unordered_map>
-NEM LAM CAI DEO GI VOI FILE MAIN VAY TR
+// NEM LAM CAI DEO GI VOI FILE MAIN VAY TR
 // int main() {
 //     std::unordered_map<int, Member> Members;
 //     std::unordered_map<int, Registration> Reg;
@@ -24,3 +24,13 @@ NEM LAM CAI DEO GI VOI FILE MAIN VAY TR
 
 //     return 0;
 // }
+
+// #include "GymController.h"
+#include "Controller/GymController.h"
+
+int main() {
+    GymController app;
+    app.run();
+    return 0;
+}
+
