@@ -9,28 +9,28 @@ class Person {
 private:
     int id;
     std::string name;
-    std::string PhoneNumber;
+    std::string phoneNumber;
 public:
 
     Person() {
         int id = 0;
         std::string name = "";
-        std::string PhoneNumber = "";
+        std::string phoneNumber = "";
 
     }
-    Person(int id, std::string name, std::string PhoneNumber) {
+    Person(int id, std::string name, std::string phoneNumber) {
         this->id = id;
         this->name = name;
-        this->PhoneNumber = PhoneNumber;
+        this->phoneNumber = phoneNumber;
     };
 
-    int getId() { return id; }
-    std::string getName() { return name; }
-    std::string getPhoneNumber() { return PhoneNumber; }
+    virtual int getId() { return id; }
+    virtual std::string getName() { return name; }
+    virtual std::string getPhoneNumber() { return phoneNumber; }
 
     void setId(int id) { this->id = id; }
     void setName(std::string name) { this->name = name; }
-    void setPhoneNumber(std::string PhoneNumber) { this->PhoneNumber = PhoneNumber; }
+    void setPhoneNumber(std::string phoneNumber) { this->phoneNumber = phoneNumber; }
 
 };
 
