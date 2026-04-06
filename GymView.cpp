@@ -113,7 +113,7 @@ void GymView::paymentsScreen() const {
     std::cout << "[0] Exit\n";
     chosse();
 }
-void GymView::reportScreen() const {
+void GymView::reportScreen() const {    //Trọng
     system("cls");
     drawBox("Report Management");
     std::cout << "[1] Doanh thu\n";
