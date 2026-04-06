@@ -83,7 +83,7 @@ void GymView::packageScreen() const {
     chosse();
 }
 
-void GymView::checkScreen() const {
+void GymView::checkScreen() const {   //Trọng đang viết nhé, đéo bt dùng đc ko nma đang vt
     system("cls");
     drawBox("Check-in System");
     std::cout << "[1] Check-in\n";
