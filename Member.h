@@ -7,32 +7,37 @@
 #include <string>
 
 
-class Member: public Person {
-private :
-    int memberId;
-    string name;
-    string dateofbirth;
-    string gender;
-    std::string numberPhone;
-    public :
-    void getMember();
-    void isActive();
-    searchInfoMember();
-public:
-    Member(int ID, std::string Name)
-    : memberId(ID), name(Name) {}
+class PersonMember:public Person {
+    std::string dateOfBirth;
+    std::string gender;
 
-    int getMemberId() {
-        return memberId;
+    public:
+    PersonMember() {
+        dateOfBirth = " ";
+        gender = " ";
+    }
+    PersonMember(int member_ID, std::string member_name, std::string member_phonenumber,std::string member_date, std::string member_gender) {
+        this->id = member_ID;
+        this->name = member_name;
+        this->PhoneNumber = member_phonenumber;
+        this->dateOfBirth = member_date;
+        this->gender = member_gender;
+
     }
 
-    std::string getName() {
-        return name;
+
+    std::string getDateOfBirth() { return dateOfBirth; }
+    std::string getGender() { return gender; }
+
+
+
+    void setDateOfBirth(std::string date) {
+        dateOfBirth = date;
+    }
+    void setGender(std::string gender) {
+        gender = gender;
     }
 
-    std::string getNumberPhone() {
-        return numberPhone;
-    }
 };
 
 
