@@ -19,15 +19,15 @@ class PersonMember:public Person {
     PersonMember(int member_ID, std::string member_name, std::string member_phonenumber,std::string member_date, std::string member_gender) {
         this->id = member_ID;
         this->name = member_name;
-        this->PhoneNumber = member_phonenumber;
+        this->phoneNumber = member_phonenumber;
         this->dateOfBirth = member_date;
         this->gender = member_gender;
 
     }
 
 
-    std::string getDateOfBirth() { return dateOfBirth; }
-    std::string getGender() { return gender; }
+   virtual std::string getDateOfBirth() { return dateOfBirth; }
+   virtual std::string getGender() { return gender; }
 
 
 
