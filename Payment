@@ -1,1 +1,34 @@
+class Payment {
+private:
+    int id;
+    int memberId;
+    int packageId;
+    double amount;
+    std::string date; // format: YYYY-MM-DD
 
+public:
+    Payment() {}
+
+    Payment(int id, int mId, int pId, double amount, std::string date) {
+        this->id = id;
+        this->memberId = mId;
+        this->packageId = pId;
+        this->amount = amount;
+        this->date = date;
+    }
+
+    int getId() const { return id; }
+    int getMemberId() const { return memberId; }
+    int getPackageId() const { return packageId; }
+    double getAmount() const { return amount; }
+    std::string getDate() const { return date; }
+
+    void display() const {
+        std::cout << "ID: " << id << "\n";
+        std::cout << "Member ID: " << memberId << "\n";
+        std::cout << "Package ID: " << packageId << "\n";
+        std::cout << "Amount: " << amount << "\n";
+        std::cout << "Date: " << date << "\n";
+        std::cout << "----------------------\n";
+    }
+};
