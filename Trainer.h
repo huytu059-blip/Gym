@@ -7,6 +7,7 @@
 class Trainer : public Person {
 private:
     std::string expertise;
+    std::vector<int> membersID;
 
 public:
     // constructor mặc định
