@@ -92,6 +92,60 @@ void GymView::checkScreen() const {   //Trọng đang viết nhé, đéo bt dùn
     std::cout << "[0] Exit\n";
     chosse();
 }
+
+//CHECKSCREEN
+#ifndef CHECK_LOGIC_H
+#define CHECK_LOGIC_H
+
+#include <map>
+#include <vector>
+
+class CheckScreen {
+private:
+    std::map<int, bool> checkStatus; // id -> trạng thái
+
+public:
+
+    // check-in
+    bool checkIn(int member_ID) {
+        if (checkStatus[member_ID] == true) {
+            return false; // đã check-in trước đó
+        }
+
+        checkStatus[member_ID] = true;
+        return true;
+    }
+
+    // check-out
+    bool checkOut(int member_ID) {
+        if (checkStatus[member_ID] == false) {
+            return false; // chưa check-in
+        }
+
+        checkStatus[member_ID] = false;
+        return true;
+    }
+
+    // lấy trạng thái của 1 hội viên
+    bool getStatus(int member_ID) {
+        return checkStatus[id];
+    }
+
+    // lấy toàn bộ danh sách trạng thái
+    std::vector<std::pair<int,bool>> getAllStatus() {
+        std::vector<std::pair<int,bool>> result;
+
+        for (auto &p : checkStatus) {
+            result.push_back(p);
+        }
+
+        return result;
+    }
+};
+
+#endif
+//////////
+
 void GymView::trainerScreen() const {
     system("cls");
     drawBox("Trainer Management");
@@ -123,7 +177,7 @@ void GymView::reportScreen() const {
     std::cout << "[0] Exit\n";
     chosse();
 }
-
+//////////
 void GymView::settingsScreen() const {    //Trọng
     system("cls");
     drawBox("Settings Management");
@@ -132,3 +186,66 @@ void GymView::settingsScreen() const {    //Trọng
     std::cout << "[3] sao luu du lieu\n";
     std::cout << "[0] Exit\n";
 }
+
+//Thiết lập giao diện
+#ifndef SETTINGS_LOGIC_H
+#define SETTINGS_LOGIC_H
+
+#include <map>
+#include <string>
+#include <vector>
+
+class SettingsScreen {
+private:
+    std::map<std::string, std::string> accounts;
+    // username -> role
+
+public:
+
+    // tạo tài khoản
+    bool createAccount(const std::string& member_name, const std::string& role) {
+        if (accounts.find(member_name) != accounts.end()) {
+            return false; // đã tồn tại
+        }
+
+        accounts[member_name] = role;
+        return true;
+    }
+
+    // thay đổi quyền
+    bool setRole(const std::string& member_name, const std::string& role) {
+        if (accounts.find(member_name) == accounts.end()) {
+            return false; // không tồn tại
+        }
+
+        accounts[member_name] = role;
+        return true;
+    }
+
+    // lấy role của user
+    std::string getRole(const std::string& member_name) const {
+        auto it = accounts.find(member_name);
+        if (it != accounts.end()) {
+            return it->second;
+        }
+        return "";
+    }
+
+    // lấy toàn bộ danh sách tài khoản
+    std::vector<std::pair<std::string,std::string>> getAllAccounts() const {
+        std::vector<std::pair<std::string,std::string>> result;
+
+        for (auto &p : accounts) {
+            result.push_back(p);
+        }
+
+        return result;
+    }
+
+    // backup (logic đơn giản)
+    bool backupData() {
+        return true;
+    }
+};
+
+#endif
