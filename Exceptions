@@ -1,0 +1,38 @@
+//
+// Created by Admin on 04/04/2026.
+//
+
+#ifndef GYM_EXCEPTIONS_H
+#define GYM_EXCEPTIONS_H
+#include <exception>
+
+
+class InvalidInputException: public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "Invalid input";
+    }
+};
+
+class NotFoundException: public std::exception {
+    const char* what() const noexcept override {
+        return "Doesn't exist";
+    }
+};
+
+class DuplicateException: public std::exception {
+    const char* what() const noexcept override {
+        return "Already exists";
+    }
+};
+
+class ExpiredPackageException: public std::exception {
+    const char* what() const noexcept override {
+        return "The package has expired";
+    }
+};
+
+
+#endif //GYM_EXCEPTIONS_H
+
+
